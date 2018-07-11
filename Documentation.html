@@ -1,0 +1,35 @@
+<div class="wikidoc">
+<p>In order to&nbsp;the JQuery SharePoint people picker you&nbsp;first need to reference the JQUery UI&nbsp;bundle which can be found here:
+<a href="http://jqueryui.com/demos/">http://jqueryui.com/demos/</a>&nbsp;&nbsp;&nbsp;</p>
+<div style="color:black; background-color:white">
+<pre><span style="color:blue">&lt;!</span><span style="color:#a31515">DOCTYPE</span> <span style="color:red">html</span> <span style="color:red">PUBLIC</span> <span style="color:blue">&quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot;</span> <span style="color:blue">&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;</span><span style="color:blue">&gt;</span>
+<span style="color:blue">&lt;</span><span style="color:#a31515">html</span> <span style="color:red">xmlns</span><span style="color:blue">=</span><span style="color:blue">&quot;http://www.w3.org/1999/xhtml&quot;</span><span style="color:blue">&gt;</span>
+<span style="color:blue">&lt;</span><span style="color:#a31515">head</span><span style="color:blue">&gt;</span>
+    <span style="color:blue">&lt;</span><span style="color:#a31515">title</span><span style="color:blue">&gt;</span><span style="color:blue">&lt;/</span><span style="color:#a31515">title</span><span style="color:blue">&gt;</span>
+    <span style="color:blue">&lt;</span><span style="color:#a31515">script</span> <span style="color:red">src</span><span style="color:blue">=</span><span style="color:blue">&quot;js/jquery-1.7.2.min.js&quot;</span> <span style="color:red">type</span><span style="color:blue">=</span><span style="color:blue">&quot;text/javascript&quot;</span><span style="color:blue">&gt;</span><span style="color:blue">&lt;/</span><span style="color:#a31515">script</span><span style="color:blue">&gt;</span>
+    <span style="color:blue">&lt;</span><span style="color:#a31515">script</span> <span style="color:red">src</span><span style="color:blue">=</span><span style="color:blue">&quot;js/jquery-ui-1.8.22.custom.min.js&quot;</span> <span style="color:red">type</span><span style="color:blue">=</span><span style="color:blue">&quot;text/javascript&quot;</span><span style="color:blue">&gt;</span><span style="color:blue">&lt;/</span><span style="color:#a31515">script</span><span style="color:blue">&gt;</span>
+    <span style="color:blue">&lt;</span><span style="color:#a31515">link</span> <span style="color:red">href</span><span style="color:blue">=</span><span style="color:blue">&quot;css/cupertino/jquery-ui-1.8.22.custom.css&quot;</span> <span style="color:red">rel</span><span style="color:blue">=</span><span style="color:blue">&quot;stylesheet&quot;</span> <span style="color:red">type</span><span style="color:blue">=</span><span style="color:blue">&quot;text/css&quot;</span> <span style="color:blue">/&gt;</span>
+    <span style="color:blue">&lt;</span><span style="color:#a31515">script</span> <span style="color:red">src</span><span style="color:blue">=</span><span style="color:blue">&quot;js/jquery-ui-sppeoplepicker-1.0.js&quot;</span> <span style="color:red">type</span><span style="color:blue">=</span><span style="color:blue">&quot;text/javascript&quot;</span><span style="color:blue">&gt;</span><span style="color:blue">&lt;/</span><span style="color:#a31515">script</span><span style="color:blue">&gt;</span>
+    <span style="color:blue">&lt;</span><span style="color:#a31515">script</span><span style="color:blue">&gt;</span>
+        $(<span style="color:blue">function</span> () {
+
+            $(<span style="color:#a31515">&quot;#spp&quot;</span>).peoplepicker({ server: <span style="color:#a31515">'http://myservername'</span> });
+
+            $(<span style="color:#a31515">&quot;#testbutton&quot;</span>).button().click(<span style="color:blue">function</span> () {
+                alert($(<span style="color:#a31515">&quot;#spp&quot;</span>).val());
+            });
+        });
+    <span style="color:blue">&lt;/</span><span style="color:#a31515">script</span><span style="color:blue">&gt;</span>
+<span style="color:blue">&lt;/</span><span style="color:#a31515">head</span><span style="color:blue">&gt;</span>
+<span style="color:blue">&lt;</span><span style="color:#a31515">body</span><span style="color:blue">&gt;</span>
+    <span style="color:blue">&lt;</span><span style="color:#a31515">div</span> <span style="color:red">id</span><span style="color:blue">=</span><span style="color:blue">&quot;spp&quot;</span><span style="color:blue">&gt;</span>
+    <span style="color:blue">&lt;/</span><span style="color:#a31515">div</span><span style="color:blue">&gt;</span>
+    <span style="color:blue">&lt;</span><span style="color:#a31515">button</span> <span style="color:red">id</span><span style="color:blue">=</span><span style="color:blue">&quot;testbutton&quot;</span><span style="color:blue">&gt;</span>text<span style="color:blue">&lt;/</span><span style="color:#a31515">button</span><span style="color:blue">&gt;</span>  
+<span style="color:blue">&lt;/</span><span style="color:#a31515">body</span><span style="color:blue">&gt;</span>
+<span style="color:blue">&lt;/</span><span style="color:#a31515">html</span><span style="color:blue">&gt;</span>
+</pre>
+</div>
+<p>Where server name is the url to your sharepoint server. The control will use _vti_bin/search.asmx to get the list of options for the drop down list. (So you must have a people search scope)</p>
+<p>*Current scope name is &quot;People&quot;, next version will allow to change it via the options.</p>
+<p>&nbsp;</p>
+</div><div class="ClearBoth"></div>
